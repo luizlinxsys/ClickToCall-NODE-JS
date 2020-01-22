@@ -2,7 +2,7 @@ const { Router } = require('express');
 var aio = require('asterisk.io'),
         ami = null;
     // Aqui voce sobre as informações do ser manager no asterisk
-    ami = aio.ami('192.168.15.230', 5038, 'admin', 'amp111');
+    ami = aio.ami('IP_Servidor', 5038, 'USUARIO', 'SENHA');
 
     ami.on('error', function(err){
         throw err;
@@ -19,7 +19,7 @@ routes.post('/', (request, response) => {
        ami.action(
             'Originate',
             {
-                Channel: 'SIP/baldussi/55' + numero, // Rota por onde irá sair a chamada
+                Channel: 'SIP/TRONCO/' + numero, // Rota por onde irá sair a chamada Ex. SIP/VONO/55 IAX/VONO/55 
                 Context: 'from-internal', // Contexto de Discagem
                 Priority: 1, // Prioridade
                 Async: 'false', 
