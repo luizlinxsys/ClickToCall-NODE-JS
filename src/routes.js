@@ -22,7 +22,7 @@ routes.post('/', (request, response) => {
                 Channel: 'SIP/TRONCO/' + numero, // Rota por onde irá sair a chamada Ex. SIP/VONO/55 IAX/VONO/55 
                 Context: 'from-internal', // Contexto de Discagem
                 Priority: 1, // Prioridade
-                Async: 'false', 
+                //Async: 'false', 
                 Exten: (ramal) // Ramal que irá atender a chamada
             },
             function(data){
